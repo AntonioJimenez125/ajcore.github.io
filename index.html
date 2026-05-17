@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ_core | Tecnologia Oficial y Soporte</title>
+    <meta name="description" content="Portal oficial de AJ_core. Descargas verificadas, soporte tecnico y proyectos oficiales.">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased transition-colors duration-300">
+
+    <!-- ============================================ -->
+    <!-- NAVEGACION FIJA                              -->
+    <!-- ============================================ -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-8 h-8 rounded-lg bg-[#5B7FA3] flex items-center justify-center text-white font-bold mr-2 shadow-sm">A</div>
+                    <span class="font-bold text-xl tracking-tight text-gray-800 dark-text-white" id="nav-logo-text">AJ_core</span>
+                </div>
+                
+                <!-- Links de Escritorio -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#inicio" class="nav-link text-gray-600 hover:text-[#5B7FA3] font-medium transition-colors duration-200">Inicio</a>
+                    <a href="#proyectos" class="nav-link text-gray-600 hover:text-[#5B7FA3] font-medium transition-colors duration-200">Proyectos</a>
+                    <a href="#soporte" class="nav-link text-gray-600 hover:text-[#5B7FA3] font-medium transition-colors duration-200">Soporte</a>
+                    <a href="#descargas" class="nav-link text-gray-600 hover:text-[#5B7FA3] font-medium transition-colors duration-200">Descargas</a>
+                    
+                    <!-- Toggle Modo Oscuro -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark-hover-bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#5B7FA3]" aria-label="Cambiar tema">
+                        <svg id="icon-moon" class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg id="icon-sun" class="w-5 h-5 text-yellow-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Boton Menu Movil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Movil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark-bg-gray-800 border-t border-gray-100 dark-border-gray-700 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark-text-gray-200 hover:bg-gray-50 dark-hover-bg-gray-700 transition-colors">Inicio</a>
+                <a href="#proyectos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark-text-gray-200 hover:bg-gray-50 dark-hover-bg-gray-700 transition-colors">Proyectos</a>
+                <a href="#soporte" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark-text-gray-200 hover:bg-gray-50 dark-hover-bg-gray-700 transition-colors">Soporte</a>
+                <a href="#descargas" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark-text-gray-200 hover:bg-gray-50 dark-hover-bg-gray-700 transition-colors">Descargas</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- SECCION HERO                                 -->
+    <!-- ============================================ -->
+    <section id="inicio" class="pt-32 pb-20 lg:pt-40 lg:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+        <div class="fade-in-up">
+            <!-- Estado de Servicios -->
+            <div class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-50 text-[#5B7FA3] mb-8 border border-blue-100 shadow-sm">
+                <span class="flex h-2.5 w-2.5 relative mr-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </span>
+                Todos los sistemas operando
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark-text-white tracking-tight mb-6 leading-tight">
+                Bienvenido a <span class="text-[#5B7FA3]">AJ_core</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 dark-text-gray-400 mb-10 leading-relaxed">
+                El ecosistema oficial de desarrollo. Aqui encontraras soporte tecnico, descargas verificadas y los proyectos que construimos para la comunidad.
+            </p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="#descargas" class="px-8 py-3.5 border border-transparent text-base font-medium rounded-xl text-white bg-[#5B7FA3] hover:bg-[#4A6C8D] md:text-lg md:px-10 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5B7FA3]">
+                    Descargar App
+                </a>
+                <a href="#soporte" class="px-8 py-3.5 border border-gray-300 dark-border-gray-600 text-base font-medium rounded-xl text-gray-700 dark-text-gray-200 bg-white dark-bg-gray-800 hover:bg-gray-50 dark-hover-bg-gray-700 md:text-lg md:px-10 transition-all duration-200 shadow-sm hover:shadow-md">
+                    Centro de Ayuda
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECCION PROYECTOS (HUB)                      -->
+    <!-- ============================================ -->
+    <section id="proyectos" class="py-20 bg-gray-50 dark-bg-gray-900-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl font-bold text-gray-900 dark-text-white sm:text-4xl tracking-tight">Proyectos Oficiales</h2>
+                <p class="mt-4 text-lg text-gray-500 dark-text-gray-400">Soluciones desarrolladas bajo el sello de calidad AJ_core.</p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                
+                <!-- Tarjeta Proyecto: El Bacho 2 -->
+                <div class="project-card bg-white dark-bg-gray-800 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark-border-gray-700 overflow-hidden flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark-from-gray-700 dark-to-gray-600 flex items-center justify-center relative overflow-hidden group">
+                        <img src="assets/mi-imagen.png" alt="El Bacho 2" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-900 dark-text-white">El Bacho 2</h3>
+                            <span class="px-3 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded-full">Activo</span>
+                        </div>
+                        <p class="text-gray-600 dark-text-gray-300 mb-6 flex-1 leading-relaxed">
+                            La nueva version oficial. Mejoras de rendimiento, nuevas caracteristicas y soporte completo directo desde este portal.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark-border-gray-700">
+                            <span class="text-sm text-gray-500 dark-text-gray-400 font-mono">v1.0.0</span>
+                            <a href="#descargas" class="text-[#5B7FA3] hover:text-[#4A6C8D] font-medium text-sm flex items-center group">
+                                Ir a Descargas 
+                                <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Placeholder para Futuros Proyectos -->
+                <div class="project-card bg-white dark-bg-gray-800 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-dashed border-gray-300 dark-border-gray-600 flex flex-col items-center justify-center p-6 text-center group cursor-pointer min-h-[360px]">
+                    <div class="w-16 h-16 rounded-full bg-gray-100 dark-bg-gray-700 flex items-center justify-center mb-4 group-hover:bg-blue-50 dark-group-hover-bg-gray-600 transition-colors duration-200">
+                        <svg class="w-8 h-8 text-gray-400 group-hover:text-[#5B7FA3] transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 dark-text-white">Proximo Proyecto</h3>
+                    <p class="mt-2 text-sm text-gray-500 dark-text-gray-400">Espacio reservado para futuras apps.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECCION SOPORTE Y FAQ                        -->
+    <!-- ============================================ -->
+    <section id="soporte" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 fade-in-up">
+            <h2 class="text-3xl font-bold text-gray-900 dark-text-white sm:text-4xl tracking-tight">Centro de Soporte</h2>
+            <p class="mt-4 text-lg text-gray-500 dark-text-gray-400">Resolvemos tus dudas al instante.</p>
+        </div>
+
+        <!-- Buscador -->
+        <div class="relative mb-10 fade-in-up">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <input type="text" id="faq-search" class="block w-full pl-12 pr-4 py-4 border border-gray-200 dark-border-gray-700 rounded-xl leading-5 bg-white dark-bg-gray-800 text-gray-900 dark-text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#5B7FA3] focus:border-transparent transition-shadow duration-200 shadow-sm text-base" placeholder="Buscar en preguntas frecuentes...">
+        </div>
+
+        <!-- Acordeones FAQ -->
+        <div class="space-y-3" id="faq-container">
+            
+            <!-- FAQ Item 1 -->
+            <div class="faq-item bg-white dark-bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark-border-gray-700 overflow-hidden transition-all duration-200">
+                <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 dark-hover-bg-gray-700-50 transition-colors duration-200">
+                    <span class="font-medium text-gray-900 dark-text-white pr-4">Es seguro descargar la APK desde este sitio?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-400 transform transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="faq-answer hidden px-6 pb-4 text-gray-600 dark-text-gray-300 leading-relaxed">
+                    Absolutamente. Este es el portal oficial de AJ_core. Cada archivo publicado aqui es verificado por nosotros. Revisa siempre que la URL en tu navegador sea la oficial antes de descargar.
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item bg-white dark-bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark-border-gray-700 overflow-hidden transition-all duration-200">
+                <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 dark-hover-bg-gray-700-50 transition-colors duration-200">
+                    <span class="font-medium text-gray-900 dark-text-white pr-4">Que requisitos necesito para instalar El Bacho 2?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-400 transform transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="faq-answer hidden px-6 pb-4 text-gray-600 dark-text-gray-300 leading-relaxed">
+                    Necesitas un dispositivo Android 8.0 (Oreo) o superior, y al menos 150MB de espacio libre en almacenamiento. Asegurate de permitir la instalacion de "Fuentes desconocidas" en tu configuracion de seguridad solo para este archivo.
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item bg-white dark-bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark-border-gray-700 overflow-hidden transition-all duration-200">
+                <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 dark-hover-bg-gray-700-50 transition-colors duration-200">
+                    <span class="font-medium text-gray-900 dark-text-white pr-4">El juego se cierra inesperadamente, que hago?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-400 transform transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="faq-answer hidden px-6 pb-4 text-gray-600 dark-text-gray-300 leading-relaxed">
+                    Primero, reinicia tu dispositivo. Si el problema persiste, verifica que tienes la ultima version descargada desde esta seccion. Si nada funciona, usa el formulario de contacto de abajo para reportar tu bug.
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item bg-white dark-bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark-border-gray-700 overflow-hidden transition-all duration-200">
+                <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 dark-hover-bg-gray-700-50 transition-colors duration-200">
+                    <span class="font-medium text-gray-900 dark-text-white pr-4">Como reporto un error o bug?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-400 transform transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="faq-answer hidden px-6 pb-4 text-gray-600 dark-text-gray-300 leading-relaxed">
+                    Desplazate hasta la seccion "No encontraste tu respuesta?" y completa el formulario. Serás redirigido a WhatsApp con tu mensaje pre-llenado. Intenta describir el problema con el mayor detalle posible.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Contacto Directo -->
+        <div class="mt-16 bg-[#F0F4F8] dark-bg-gray-800-50 rounded-2xl p-8 sm:p-10 border border-[#DDE5EE] dark-border-gray-700 fade-in-up">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 dark-text-white">No encontraste tu respuesta?</h3>
+                <p class="mt-2 text-gray-600 dark-text-gray-400">Escríbenos directamente. Te responderemos lo antes posible.</p>
+            </div>
+            
+            <!-- Formulario de Contacto -->
+            <form id="contact-form" class="space-y-4 max-w-lg mx-auto">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 dark-text-gray-300 mb-1">Tu Nombre</label>
+                    <input type="text" id="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark-border-gray-600 bg-white dark-bg-gray-700 text-gray-900 dark-text-white focus:ring-2 focus:ring-[#5B7FA3] focus:border-transparent outline-none transition-all duration-200" placeholder="Tu nombre">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 dark-text-gray-300 mb-1">Mensaje / Descripcion del problema</label>
+                    <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark-border-gray-600 bg-white dark-bg-gray-700 text-gray-900 dark-text-white focus:ring-2 focus:ring-[#5B7FA3] focus:border-transparent outline-none transition-all duration-200 resize-none" placeholder="Describe tu problema..."></textarea>
+                </div>
+                <button type="submit" class="w-full px-6 py-3.5 bg-[#5B7FA3] hover:bg-[#4A6C8D] text-white font-bold rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5B7FA3]">
+                    <span id="btn-text">Enviar por WhatsApp</span>
+                    <svg id="btn-icon" class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </button>
+                <p class="text-xs text-center text-gray-500 mt-4">Al enviar, serás redirigido a WhatsApp con tu mensaje pre-llenado.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECCION DESCARGAS OFICIALES                  -->
+    <!-- ============================================ -->
+    <section id="descargas" class="py-20 bg-gray-50 dark-bg-gray-900-50 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white dark-bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark-border-gray-700 overflow-hidden fade-in-up">
+                
+                <!-- Header de la tarjeta de descarga -->
+                <div class="bg-gradient-to-r from-[#5B7FA3] to-[#7DA0C4] p-8 sm:p-12 text-white text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+                    <h2 class="text-3xl font-bold relative z-10 tracking-tight">Descarga Oficial</h2>
+                    <p class="mt-2 opacity-90 relative z-10 text-lg">El Bacho 2 - APK Verificada</p>
+                </div>
+
+                <div class="p-8 sm:p-12">
+                    <!-- Indicadores de Confianza -->
+                    <div class="flex flex-wrap justify-center gap-4 mb-10">
+                        <div class="flex items-center px-4 py-2 bg-green-50 dark-bg-green-900-30 text-green-700 dark-text-green-300 rounded-full text-sm font-medium border border-green-100 dark-border-green-800">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Archivo Verificado
+                        </div>
+                        <div class="flex items-center px-4 py-2 bg-blue-50 dark-bg-blue-900-30 text-blue-700 dark-text-blue-300 rounded-full text-sm font-medium border border-blue-100 dark-border-blue-800">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            Sitio Oficial SSL
+                        </div>
+                        <div class="flex items-center px-4 py-2 bg-purple-50 dark-bg-purple-900-30 text-purple-700 dark-text-purple-300 rounded-full text-sm font-medium border border-purple-100 dark-border-purple-800">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                            Sin virus
+                        </div>
+                    </div>
+
+                    <!-- Detalles del Archivo -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 border-b border-gray-100 dark-border-gray-700 pb-10">
+                        <div class="text-center p-4 bg-gray-50 dark-bg-gray-700-50 rounded-xl">
+                            <p class="text-sm text-gray-500 dark-text-gray-400 mb-1">Version Actual</p>
+                            <p class="text-2xl font-bold text-gray-900 dark-text-white font-mono">v1.0.0</p>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 dark-bg-gray-700-50 rounded-xl">
+                            <p class="text-sm text-gray-500 dark-text-gray-400 mb-1">Tamano</p>
+                            <p class="text-2xl font-bold text-gray-900 dark-text-white">145 MB</p>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 dark-bg-gray-700-50 rounded-xl">
+                            <p class="text-sm text-gray-500 dark-text-gray-400 mb-1">Requisitos</p>
+                            <p class="text-2xl font-bold text-gray-900 dark-text-white">Android 8.0+</p>
+                        </div>
+                    </div>
+
+                    <!-- Boton de Descarga Principal -->
+                    <div class="text-center">
+                        <button id="download-btn" class="group relative inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white transition-all duration-200 bg-[#5B7FA3] rounded-full hover:bg-[#4A6C8D] hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5B7FA3] w-full sm:w-auto min-w-[280px] overflow-hidden">
+                            <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+                            <span id="btn-download-text" class="relative flex items-center">
+                                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                Descargar APK Oficial
+                            </span>
+                            <!-- Loading Spinner (oculto por defecto) -->
+                            <svg id="download-spinner" class="hidden animate-spin ml-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </button>
+                        <p class="mt-4 text-sm text-gray-500 dark-text-gray-400">
+                            Ultima actualizacion: <span class="font-medium">17 de Mayo, 2026</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer class="bg-white dark-bg-gray-800 border-t border-gray-200 dark-border-gray-700 py-12 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 text-center md:text-left">
+                <span class="font-bold text-xl text-gray-800 dark-text-white tracking-tight">AJ_core</span>
+                <p class="text-sm text-gray-500 mt-1"> Desarrollando el futuro.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-[#5B7FA3] transition-colors duration-200" aria-label="GitHub">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Principal -->
+    <script src="js/script.js"></script>
+</body>
+</html>
